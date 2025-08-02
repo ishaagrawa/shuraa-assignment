@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const services = [
-  { title: 'Accounting & Bookkeeping', description: 'Outsource your accounting & bookkeeping requirements to Shuraa Tax. We ensure compliance with UAE regulations.' },
-  { title: 'VAT Consultancy', description: 'Professional VAT registration, filing, and advisory for UAE businesses.' },
-  { title: 'Corporate Tax', description: 'Corporate tax registration, filing, and consultancy for UAE entrepreneurs.' },
-  { title: 'Auditing Services', description: 'Regular audits to maintain financial accuracy & compliance.' },
-  { title: 'Add-On Services', description: 'Payroll, MIS reporting, compliance review, and more.' },
+  { id: 'accounting', title: 'Accounting & Bookkeeping', description: 'Outsource your accounting & bookkeeping requirements to Shuraa Tax. We ensure compliance with UAE regulations.' },
+  { id: 'vat', title: 'VAT Consultancy', description: 'Professional VAT registration, filing, and advisory for UAE businesses.' },
+  { id: 'corporate-tax', title: 'Corporate Tax', description: 'Corporate tax registration, filing, and consultancy for UAE entrepreneurs.' },
+  { id: 'audit', title: 'Auditing Services', description: 'Regular audits to maintain financial accuracy & compliance.' },
+  { id: 'add-on', title: 'Add-On Services', description: 'Payroll, MIS reporting, compliance review, and more.' },
 ];
 
 const ServicesSection = () => (
@@ -17,6 +18,7 @@ const ServicesSection = () => (
           <div key={idx} className="bg-blue-50 rounded-lg shadow p-6 hover:shadow-lg transition">
             <h3 className="text-xl font-semibold mb-2 text-blue-700">{service.title}</h3>
             <p className="text-gray-700">{service.description}</p>
+            <Link to={`/service/${service.id}`} className="inline-block mt-4 text-blue-700 font-semibold hover:underline">Learn More</Link>
           </div>
         ))}
       </div>

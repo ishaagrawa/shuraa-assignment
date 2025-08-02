@@ -8,6 +8,7 @@ const Home = lazy(() => import('./pages/Home'));
 const BlogList = lazy(() => import('./pages/BlogList'));
 const BlogDetails = lazy(() => import('./pages/BlogDetails'));
 const Contact = lazy(() => import('./pages/Contact'));
+const ServiceDetails = lazy(() => import('./pages/ServiceDetails'));
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/service/:id" element={<ServiceDetails />} />
         </Routes>
       </Suspense>
       <Footer />
